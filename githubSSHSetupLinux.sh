@@ -1,7 +1,6 @@
 #!/bin/bash
 link="https://github.com/settings/ssh/new"
-echo "Enter you email: "
-read email
+read -p "Enter your email: " email
 eval githubSSHCMD=("ssh-keygen" "-t" "ed25519" "-C" "$email")
 "${githubSSHCMD[@]}"
 eval "$(ssh-agent -s)"
